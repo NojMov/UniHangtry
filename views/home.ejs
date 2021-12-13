@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHang Home</title>
+
+    <link rel="stylesheet" href="../public/css/home.css">
+</head>
+<body>
+    <header>
+        
+        <a href="/">
+            <img src="../public/media/img/unihang_logo.jpg" alt="UniHang" class="logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>What We're About</h2>
+            <div id="aboutus">
+                Helping bring University students come together!
+                <br>
+                Students from all over can join the fun that students from other universities
+                are having too! This web application is about finding organizations/clubs to 
+                join and finding events to go to. We at UniHang hope you can find what you are
+                looking for! 
+            </div>
+        </section>
+
+        <section class="container">
+            <img src="../public/media/img/uni.jpg" alt="Sea Urchins" id="uni">
+            <div id="funfacts">
+                Fun fact! Did you know?
+                <br>
+                Uni (oo-nee) is Japanese for sea urchin gonads.
+                <br>
+                You can pronouce Uni however you want to. It is all the same to us!
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Create an Org</h2>
+            <form action="/createorg/" id="org_creation" method="post">
+                <div>
+                  <label for="oname">Name of Org:</label>
+                  <br>
+                  <input type="text" id="org" name="orgname" placeholder="e.g GrizzGang">
+                </div>
+                <div>
+                  <label for="odetails">Org Details:</label>
+                  <br>
+                  <input type="text" id="odetails" name="details" placeholder="e.g we like bears(max characters 255)">
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="button">
+                </div>
+              </form>
+        </section>
+
+        <div class="butsect">
+            <form action="/readOrgs" method="get">
+                <input type="submit" value="See Orgs" class="seebutt"/>
+            </form>
+        </div>
+
+        <section class="container">
+            <h2>Create an Event</h2>
+            <form action="/createevent/" id="event_creation" method="post">
+                <div>
+                  <label for="ename">Name of Event:</label>
+                  <br>
+                  <input type="text" name="evname" placeholder="e.g hangout sesh">
+                </div>
+                <div>
+                    <label for="edate">Date of Event:</label>
+                    <br>
+                    <input type="text" id="date" name="thedate" placeholder="e.g year/month/day">
+                </div>
+                <div>
+                    <label for="edetails">Event Details:</label>
+                    <br>
+                    <input type="text" name="evdetails" id="edet" placeholder="e.g we going to eat(max characters 255)">
+                  </div>
+                <div>
+                    <input type="submit" value="Submit" class="button">
+                </div>
+              </form>
+        </section>
+
+        <div class="butsect">
+            <form action="/readEvents/" method="get">
+                <input type="submit" value="See Events" class="seebutt"/>
+            </form>
+        </div>
+    </main>
+    
+    <hr>
+    
+    <footer>
+        &copy; UniHang
+    </footer>
+</body>
+</html>

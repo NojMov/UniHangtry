@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHang Events</title>
+
+    <link rel="stylesheet" href="../public/css/events.css">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="../public/media/img/unihang_logo.jpg" alt="UniHang" class="logo">
+        </a>
+
+        <nav>
+            <ul id="nav">
+                <li class="navcontent"><a href="/">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Events</h2>
+            <div>
+                <ul>
+                    <%e1.forEach((item)=>{%>
+                    <li class="list">
+                      id: <%=item.id%> &nbsp; Event: <%= item.ename%> &nbsp; Details:
+                      <%=item.edetails%> &nbsp; Date: <%=item.edate%>
+                    </li>
+                    <%});%>
+                  </ul>
+            </div>
+
+        </section>
+
+        <section class="container">
+            <h2>Update Event Details</h2>
+            <form action="/updateevent/" method="post">
+                <label for="eventId">Search By Org ID:</label>
+                <br>
+                <input type="text" name="eventId" placeholder="Event ID" required>
+                <br>
+                <label for="updateEDate">Enter New Date</label>
+                <br>
+                <input type="text" name="updateEDate" placeholder="e.g yyyy/mm/dd" required>
+                <br>
+                <label for="updateEDetails">Enter New details</label>
+                <br>
+                <input type="text" name="updateEDetails" placeholder="Details" id="edetails" required>
+                <br>
+                <input type="submit" value="Submit" class="butt">
+            </form>
+
+            <hr>
+
+            <h2>Delete Event</h2>
+            <form action="/deleteevent/" method="post">
+                <label for="eIdent">Search By Org ID:</label>
+                <br>
+                <input type="text" name="eIdent" placeholder="Enter the Events ID" required>
+                <br>
+                <input type="submit" value="Submit" class="butt">
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        &copy; UniHang
+    </footer>
+</body>
+</html>

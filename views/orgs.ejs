@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHang Organizations</title>
+    <link rel="stylesheet" href="../public/css/organizations.css">
+
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="../public/media/img/unihang_logo.jpg" alt="UniHang" class="logo">
+        </a>
+
+        <nav>
+            <ul id="nav">
+                <li class="navcontent"><a href="/">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Organizations</h2>
+            <div>
+                <ul>
+                    <%data.forEach((item)=>{%>
+                    <li class="list">
+                      Id: <%=item.id%> &nbsp; Name: <%= item.oname%> &nbsp; Details:
+                      <%=item.odetails%>
+                    </li>
+                    <%});%>
+                  </ul>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Update Org Details</h2>
+            <form action="/updateorgs/" method="post">
+                <label for="orgId">Search By Org ID:</label>
+                <br>
+                <input type="text" name="orgId" placeholder="Enter the Orgs ID" required>
+                <br>
+                <label for="updateOrgDetails">Enter New details</label>
+                <br>
+                <input type="text" name="updateOrgDetails" placeholder="Details" id="odetails" required>
+                <br>
+                <input type="submit" value="Submit" class="butt">
+            </form>
+
+            <hr>
+
+            <h2>Delete Org</h2>
+            <form action="/deleteorg/" method="post">
+                <label for="orgIdent">Search By Org ID:</label>
+                <br>
+                <input type="text" name="orgIdent" placeholder="Enter the Orgs ID" required>
+                <br>
+                <input type="submit" value="Submit" class="butt">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; UniHang
+    </footer>
+    
+</body>
+</html>
